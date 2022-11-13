@@ -13,5 +13,26 @@ module.exports.newsController = {
         }).then((news) => {
             res.json(news)
         })
-    }
+    },
+    deleteNews: (req, res) => {
+        News.findByIdAndDelete(req.params.newsId).then(() => {
+            res.json('Новость удалена')
+        })
+    },
+    getAllNews: (req, res) => {
+        News.find({}).then((news) => {
+            res.json(news)
+        })
+    },
+    getNewscatigorias: (req, res) => {
+        News.find({}, {category: req.params.categoriId}).then((news) => {
+            res.json(news)
+        })
+    },
+    getFindByID: (req, res) => {
+        News.findById(req.params.newsId).then((news) => {
+            res.json(news)
+        })
+    },
+
 }

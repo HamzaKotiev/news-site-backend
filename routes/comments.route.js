@@ -1,11 +1,11 @@
 const { Router } = require('express');
-const {commentControlle} = require('../controllers/comment.control');
+const {commentController} = require('../controllers/comment.control');
 
 const router = Router();
 
-router.post('/categories',  );
-router.delete('/categories',  );
-router.patch('/categories', );
-router.get('/categories',  );
+router.post('/post', commentController.postCommet );
+router.delete('/',  );
+router.patch('/', );
+router.get('/',  );
 
 module.exports = router;

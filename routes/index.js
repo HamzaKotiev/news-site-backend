@@ -3,7 +3,7 @@ const { Router } = require('express');
 const router = Router();
 
 
-router.use(require('./comments.route'))
+router.use('/comment',require('./comments.route'))
 router.use(require('./categories.route'));
 router.use('/news',require('./news.route'));
 
