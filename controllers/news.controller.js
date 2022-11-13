@@ -25,7 +25,7 @@ module.exports.newsController = {
         })
     },
     getNewscatigorias: (req, res) => {
-        News.find({}, {category: req.params.categoriId}).then((news) => {
+        News.find({category: req.params.categoriId},{}).then((news) => {
             res.json(news)
         })
     },

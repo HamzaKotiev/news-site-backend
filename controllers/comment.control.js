@@ -10,6 +10,16 @@ module.exports.commentController = {
        }).then((comment) => {
             res.json(comment)
         })
+    },
+    deleteComment: (req, res) => {
+        Comment.findByIdAndDelete(req.params.commentId).then(() => {
+            res.json('коммента больше нет !')
+        })
+    },
+    getAllCommentByIdcat: (req, res) => {
+        Comment.find({news: req.params.newsId}, {}).then((news) => {
+            res.json(news)
+        })
     }
     
 }
